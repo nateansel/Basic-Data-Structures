@@ -8,7 +8,7 @@
 
 #include "../Linked_List/linked_list.c"
 
-// Define Linked List
+// Define Stack
 typedef struct Stack_s {
   int length;
   struct LinkedList_s list;

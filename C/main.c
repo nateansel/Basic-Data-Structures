@@ -12,6 +12,7 @@
 
 #include "./Linked_List/linked_list.c"
 #include "./Stack/stack.c"
+#include "./Queue/queue.c"
 
 int main(int argc, char const *argv[]) {
   LinkedList list = LINKEDLIST_INIT();
@@ -37,5 +38,20 @@ int main(int argc, char const *argv[]) {
   Node* poppedNode = pop(&stack);
   printf("Popped Node: %d\n", poppedNode->value);
   printStack(&stack);
+
+  Queue queue = QUEUE_INIT();
+
+  Node node5 = NODE_INIT(value, 5);
+  enqueue(&queue, &node5);
+
+  Node node6 = NODE_INIT(value, 6);
+  enqueue(&queue, &node6);
+
+  printQueue(&queue);
+
+  Node* dequeuedNode = dequeue(&queue);
+  printf("Dequeued Node: %d\n", dequeuedNode->value);
+  printQueue(&queue);
+
   return 0;
 }
